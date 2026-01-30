@@ -79,7 +79,7 @@ The goal is **shipping a paid SaaS quickly**.
 
 ### 1. Clone the Repository
 
-```bash
+```
 git clone https://github.com/your-username/saas-starter.git
 cd saas-starter
 ```
@@ -90,7 +90,7 @@ pnpm install
 ```
 3. Environment Variables
 Create a .env file in the root directory:
-
+```
 # Database
 DATABASE_URL=
 
@@ -110,11 +110,16 @@ RAZORPAY_WEBHOOK_SECRET=
 
 # Email
 RESEND_API_KEY=
+```
 4. Database Setup
+```
 pnpm prisma generate
 pnpm prisma migrate dev
+```
 5. Run Locally
+```
 pnpm dev
+```
 The app will run at:
 👉 http://localhost:3000
 
