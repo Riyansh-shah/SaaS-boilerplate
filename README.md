@@ -88,7 +88,7 @@ cd saas-starter
 pnpm install
 # or npm install / yarn install
 ```
-3. Environment Variables
+### 3. Environment Variables
 Create a .env file in the root directory:
 ```
 # Database
@@ -111,19 +111,19 @@ RAZORPAY_WEBHOOK_SECRET=
 # Email
 RESEND_API_KEY=
 ```
-4. Database Setup
+### 4. Database Setup
 ```
 pnpm prisma generate
 pnpm prisma migrate dev
 ```
-5. Run Locally
+### 5. Run Locally
 ```
 pnpm dev
 ```
 The app will run at:
 👉 http://localhost:3000
 
-💳 Payments & Subscriptions
+## 💳 Payments & Subscriptions
 Stripe (International Customers)
 Monthly & yearly subscriptions
 
@@ -140,7 +140,7 @@ Webhook-based payment & subscription tracking
 
 You can enable either or both, depending on where your customers are located.
 
-📄 Legal Templates
+## 📄 Legal Templates
 This repository includes basic legal templates:
 
 Terms of Service
@@ -151,11 +151,11 @@ Cookie Policy
 
 Refund Policy
 
-⚠️ Disclaimer:
+### ⚠️ Disclaimer:
 These documents are provided as templates only and do not constitute legal advice.
 You should review them with a qualified lawyer before using them in production.
 
-📋 Launch Checklist
+## 📋 Launch Checklist
 The included checklist helps you verify:
 
 Authentication & security
@@ -170,7 +170,7 @@ Basic operational steps
 
 Designed to reduce “did I forget something?” stress.
 
-🔐 Admin Features
+## 🔐 Admin Features
 View users
 
 View subscriptions
@@ -179,7 +179,7 @@ Manually grant or revoke access
 
 Basic system visibility for founders
 
-📦 Deployment
+## 📦 Deployment
 Vercel (Recommended)
 Push the repository to GitHub
 
@@ -189,7 +189,7 @@ Set environment variables
 
 Deploy 🚀
 
-🗺️ Roadmap (Post-V1)
+## 🗺️ Roadmap (Post-V1)
 Team accounts
 
 Usage-based billing
@@ -200,7 +200,7 @@ Feature flags
 
 Email template library
 
-🤝 Contributing
+## 🤝 Contributing
 This is a commercial starter kit.
 
 Contributions are welcome for:
@@ -213,16 +213,16 @@ Small enhancements
 
 Please open an issue before submitting large changes.
 
-📜 License
+## 📜 License
 This project is licensed under a commercial license.
 
-You may:
+### You may:
 
 Use it to build and sell your own SaaS
 
 Modify it for personal or client projects
 
-You may not:
+### You may not:
 
 Resell or redistribute this starter kit
 
@@ -232,14 +232,14 @@ Claim authorship of the original codebase
 
 See the LICENSE file for full details.
 
-💬 Support
+## 💬 Support
 If you encounter issues or have questions:
 
 Open a GitHub issue
 
-Or contact the maintainer directly
+Or contact the maintainer directly - riyanshshah576@gmail.com
 
-⭐ Final Note
+## ⭐ Final Note
 If this starter saves you weeks of work, consider supporting the project.
 
-Happy shipping 🚀
+# Happy shipping 
