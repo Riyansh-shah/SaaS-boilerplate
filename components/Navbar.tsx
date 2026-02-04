@@ -3,16 +3,23 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { useSession, signOut } from "next-auth/react";
 import {
   Menu,
   X,
   Phone,
   ChevronDown,
-  Gift,
   Home,
   Info,
   Mail,
   ShoppingBag,
+  User,
+  ShoppingCart,
+  Package,
+  CreditCard,
+  Settings,
+  LogOut,
+  LogIn,
 } from "lucide-react";
 
 const navLinks = [
@@ -36,10 +43,20 @@ const navLinks = [
   { href: "/contact", label: "Contact", icon: Mail },
 ];
 
+const accountLinks = [
+  { href: "/dashboard", label: "My Account", icon: User },
+  { href: "/cart", label: "Shopping Cart", icon: ShoppingCart },
+  { href: "/orders", label: "Past Orders", icon: Package },
+  { href: "/checkout", label: "Checkout", icon: CreditCard },
+  { href: "/settings", label: "Personal Info", icon: Settings },
+];
+
 export default function Navbar() {
+  const { data: session, status } = useSession();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const [isAccountOpen, setIsAccountOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,6 +65,10 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isAuthenticated = status === "authenticated";
+  const userInitial = session?.user?.name?.charAt(0)?.toUpperCase() ||
+    session?.user?.email?.charAt(0)?.toUpperCase() || "U";
 
   return (
     <>
@@ -109,8 +130,8 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-6">
+          {/* CTA Buttons - Account Section */}
+          <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+911234567890"
               className={`flex items-center gap-2 font-bold text-sm transition-colors ${isScrolled ? "text-slate-900" : "text-white"
@@ -119,10 +140,79 @@ export default function Navbar() {
               <Phone size={18} className="text-primary" />
               <span className="hidden xl:inline">+91 1234567890</span>
             </a>
-            <Link href="/contact" className="btn btn-primary px-6 py-2.5 text-sm font-bold shadow-lg shadow-indigo-500/20">
-              <Gift size={18} />
-              Get Quote
-            </Link>
+
+            {isAuthenticated ? (
+              /* Account Dropdown for Logged-in Users */
+              <div
+                className="relative"
+                onMouseEnter={() => setIsAccountOpen(true)}
+                onMouseLeave={() => setIsAccountOpen(false)}
+              >
+                <button
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all ${isScrolled
+                      ? "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                      : "bg-white/10 text-white hover:bg-white/20"
+                    }`}
+                >
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${isScrolled ? "bg-primary text-white" : "bg-white text-primary"
+                    }`}>
+                    {userInitial}
+                  </div>
+                  <span className="hidden xl:inline">Account</span>
+                  <ChevronDown size={14} className={`transition-transform duration-200 ${isAccountOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {/* Account Dropdown Menu */}
+                <div
+                  className={`absolute top-full right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-slate-100 py-3 transition-all duration-200 origin-top ${isAccountOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                    }`}
+                >
+                  <div className="px-4 py-2 border-b border-slate-100 mb-2">
+                    <p className="text-sm font-semibold text-slate-900">{session?.user?.name || "User"}</p>
+                    <p className="text-xs text-slate-500">{session?.user?.email}</p>
+                  </div>
+                  {accountLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 transition-all font-medium"
+                    >
+                      <item.icon size={18} />
+                      {item.label}
+                    </Link>
+                  ))}
+                  <div className="border-t border-slate-100 mt-2 pt-2">
+                    <button
+                      onClick={() => signOut({ callbackUrl: "/login" })}
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 transition-all font-medium w-full"
+                    >
+                      <LogOut size={18} />
+                      Sign Out
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              /* Login/Signup for Guests */
+              <div className="flex items-center gap-3">
+                <Link
+                  href="/login"
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all ${isScrolled
+                      ? "text-slate-700 hover:bg-slate-100"
+                      : "text-white hover:bg-white/10"
+                    }`}
+                >
+                  <LogIn size={18} />
+                  Login
+                </Link>
+                <Link
+                  href="/signup"
+                  className="btn btn-primary px-5 py-2.5 text-sm font-bold shadow-lg shadow-indigo-500/20"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -189,6 +279,24 @@ export default function Navbar() {
                 )}
               </div>
             ))}
+
+            {/* Account Section in Mobile */}
+            {isAuthenticated && (
+              <div className="mt-4 pt-4 border-t border-slate-100">
+                <p className="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Account</p>
+                {accountLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-3 p-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-xl transition-colors"
+                  >
+                    <item.icon size={20} className="text-primary" />
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
@@ -200,16 +308,40 @@ export default function Navbar() {
             <Phone size={20} className="text-primary" />
             +91 1234567890
           </a>
-          <Link
-            href="/contact"
-            className="btn btn-primary w-full p-4 rounded-2xl font-bold shadow-lg shadow-indigo-500/10"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <Gift size={20} />
-            Get Quote
-          </Link>
+
+          {isAuthenticated ? (
+            <button
+              onClick={() => {
+                signOut({ callbackUrl: "/login" });
+                setIsMobileMenuOpen(false);
+              }}
+              className="flex items-center justify-center gap-2 w-full p-4 bg-red-50 border border-red-100 rounded-2xl text-red-600 font-bold"
+            >
+              <LogOut size={20} />
+              Sign Out
+            </button>
+          ) : (
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/login"
+                className="flex items-center justify-center gap-2 w-full p-4 bg-white border border-slate-200 rounded-2xl text-slate-900 font-bold shadow-sm"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <LogIn size={20} />
+                Login
+              </Link>
+              <Link
+                href="/signup"
+                className="btn btn-primary w-full p-4 rounded-2xl font-bold shadow-lg shadow-indigo-500/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Sign Up
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </>
   );
 }
+
