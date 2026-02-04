@@ -44,11 +44,10 @@ const navLinks = [
 ];
 
 const accountLinks = [
-  { href: "/dashboard", label: "My Account", icon: User },
+  { href: "/settings", label: "Personal Details", icon: User },
   { href: "/cart", label: "Shopping Cart", icon: ShoppingCart },
   { href: "/orders", label: "Past Orders", icon: Package },
   { href: "/checkout", label: "Checkout", icon: CreditCard },
-  { href: "/settings", label: "Personal Info", icon: Settings },
 ];
 
 export default function Navbar() {
@@ -150,8 +149,8 @@ export default function Navbar() {
               >
                 <button
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all ${isScrolled
-                      ? "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                      : "bg-white/10 text-white hover:bg-white/20"
+                    ? "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                    : "bg-white/10 text-white hover:bg-white/20"
                     }`}
                 >
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${isScrolled ? "bg-primary text-white" : "bg-white text-primary"
@@ -198,8 +197,8 @@ export default function Navbar() {
                 <Link
                   href="/login"
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all ${isScrolled
-                      ? "text-slate-700 hover:bg-slate-100"
-                      : "text-white hover:bg-white/10"
+                    ? "text-slate-700 hover:bg-slate-100"
+                    : "text-white hover:bg-white/10"
                     }`}
                 >
                   <LogIn size={18} />
