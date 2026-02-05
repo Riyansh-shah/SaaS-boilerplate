@@ -2,8 +2,8 @@ import Section from "@/components/ui/Section";
 import { Award, Target, Eye, Users, Heart, Sparkles, Dumbbell, Clock, Shield } from "lucide-react";
 
 export const metadata = {
-    title: "About Us | Silver Life Gym Trial",
-    description: "Learn more about Silver Life Gym, our story, mission, and commitment to transforming lives through fitness in Ahmedabad.",
+    title: "About Us | ABC.gym Gym Trial",
+    description: "Learn more about ABC.gym Gym, our story, mission, and commitment to transforming lives through fitness in Ahmedabad.",
 };
 
 export default function AboutPage() {
@@ -15,7 +15,7 @@ export default function AboutPage() {
                     <h1 className="text-white mb-6">Our Story</h1>
                     <p className="text-white/80 text-xl">
                         Transforming lives through fitness since 2018. Based in the heart
-                        of Ahmedabad, Silver Life Gym is more than just a workout space –
+                        of Ahmedabad, ABC.gym Gym is more than just a workout space –
                         it's a community dedicated to helping you become your best self.
                     </p>
                 </div>

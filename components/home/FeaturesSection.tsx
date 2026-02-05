@@ -65,7 +65,7 @@ export default function FeaturesSection() {
                 {/* Section Header */}
                 <div className="text-center mb-16 max-w-2xl mx-auto">
                     <span className="inline-block px-4 py-1.5 bg-cyan-500/10 text-cyan-600 rounded-full text-sm font-semibold mb-4">
-                        Why Silver Life
+                        Why ABC.gym
                     </span>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-slate-900">
                         World-Class <span className="gradient-text">Facilities</span>

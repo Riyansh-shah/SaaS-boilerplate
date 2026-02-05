@@ -81,7 +81,7 @@ export default function Navbar() {
               <Dumbbell size={24} className={isScrolled ? "text-white" : "text-blue-600"} />
             </div>
             <span className={`text-xl font-bold font-heading ${isScrolled ? "text-slate-900" : "text-white"}`}>
-              Silver Life
+              ABC.gym
             </span>
           </Link>
 
@@ -236,7 +236,7 @@ export default function Navbar() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
               <Dumbbell size={18} className="text-white" />
             </div>
-            <span className="text-lg font-bold font-heading text-slate-900">Silver Life</span>
+            <span className="text-lg font-bold font-heading text-slate-900">ABC.gym</span>
           </div>
           <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-slate-500 hover:bg-slate-50 rounded-lg">
             <X size={24} />

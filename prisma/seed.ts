@@ -8,13 +8,13 @@ async function main() {
   // Hash password for admin
   const hashedPassword = await bcrypt.hash("admin123", 10);
 
-  // Create admin user for Silver Life Gym
+  // Create admin user for ABC.gym
   const admin = await prisma.user.upsert({
-    where: { email: "admin@silverlifegym.com" },
+    where: { email: "admin@abcgym.com" },
     update: {},
     create: {
-      email: "admin@silverlifegym.com",
-      name: "Silver Life Admin",
+      email: "admin@abcgym.com",
+      name: "ABC Gym Admin",
       password: hashedPassword,
       role: "ADMIN",
     },

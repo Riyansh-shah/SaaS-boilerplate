@@ -4,8 +4,8 @@ import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: {
-    default: "Silver Life Gym Trial | Transform Your Body, Transform Your Life",
-    template: "%s | Silver Life Gym Trial",
+    default: "ABC.gym Gym Trial | Transform Your Body, Transform Your Life",
+    template: "%s | ABC.gym Gym Trial",
   },
   description:
     "Your premier fitness destination. Join our state-of-the-art gym with expert trainers, diverse classes, and flexible memberships. Start your transformation today!",
@@ -22,30 +22,30 @@ export const metadata: Metadata = {
     "CrossFit",
     "fitness classes",
   ],
-  authors: [{ name: "Silver Life Gym Trial" }],
-  creator: "Silver Life Gym Trial",
-  publisher: "Silver Life Gym Trial",
+  authors: [{ name: "ABC.gym Gym Trial" }],
+  creator: "ABC.gym Gym Trial",
+  publisher: "ABC.gym Gym Trial",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://silverlifegym.com"),
+  metadataBase: new URL("https://abcgym.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Silver Life Gym Trial | Transform Your Body, Transform Your Life",
+    title: "ABC.gym Gym Trial | Transform Your Body, Transform Your Life",
     description:
       "Your premier fitness destination with state-of-the-art equipment, expert trainers, and diverse fitness classes.",
-    url: "https://silverlifegym.com",
-    siteName: "Silver Life Gym Trial",
+    url: "https://abcgym.com",
+    siteName: "ABC.gym Gym Trial",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Silver Life Gym Trial | Transform Your Body, Transform Your Life",
+    title: "ABC.gym Gym Trial | Transform Your Body, Transform Your Life",
     description:
       "Your premier fitness destination with state-of-the-art equipment, expert trainers, and diverse fitness classes.",
   },
@@ -89,12 +89,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "HealthClub",
-              name: "Silver Life Gym Trial",
+              name: "ABC.gym Gym Trial",
               description:
                 "Premier fitness destination with state-of-the-art equipment, expert trainers, and diverse fitness classes",
-              url: "https://silverlifegym.com",
+              url: "https://abcgym.com",
               telephone: "+91-1234567890",
-              email: "info@silverlifegym.com",
+              email: "info@abcgym.com",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Ahmedabad",

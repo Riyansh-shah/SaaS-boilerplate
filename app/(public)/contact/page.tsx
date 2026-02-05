@@ -83,7 +83,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h4 className="font-bold mb-1 text-slate-900">Email Us</h4>
-                                    <p className="m-0 text-slate-600">info@silverlifegym.com</p>
+                                    <p className="m-0 text-slate-600">info@abcgym.com</p>
                                     <p className="m-0 text-sm text-gray-500">We'll reply within 24 hours</p>
                                 </div>
                             </div>
@@ -206,7 +206,7 @@ export default function ContactPage() {
             <section className="h-[450px] bg-slate-100 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
                     <div className="text-center bg-white p-8 rounded-2xl shadow-2xl border border-gray-100 pointer-events-auto max-w-[90%]">
-                        <h3 className="text-xl font-bold mb-2">Visit Silver Life Gym</h3>
+                        <h3 className="text-xl font-bold mb-2">Visit ABC.gym Gym</h3>
                         <p className="text-gray-600 mb-4">Ahmedabad, Gujarat, India</p>
                         <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline text-slate-900 border-slate-200">
                             Open in Google Maps

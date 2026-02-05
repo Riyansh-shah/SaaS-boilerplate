@@ -80,10 +80,10 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
                 <Dumbbell size={22} className="text-white" />
               </div>
-              <span className="text-xl font-bold font-heading">Silver Life</span>
+              <span className="text-xl font-bold font-heading">ABC.gym</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Transform your body and mind at Silver Life Gym. State-of-the-art equipment,
+              Transform your body and mind at ABC.gym Gym. State-of-the-art equipment,
               expert trainers, and a supportive community to help you achieve your fitness goals.
             </p>
 
@@ -93,9 +93,9 @@ export default function Footer() {
                 <Phone size={18} className="text-blue-500" />
                 +91 1234567890
               </a>
-              <a href="mailto:info@silverlifegym.com" className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="mailto:info@abcgym.com" className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
                 <Mail size={18} className="text-blue-500" />
-                info@silverlifegym.com
+                info@abcgym.com
               </a>
               <div className="flex items-start gap-3 text-gray-400">
                 <MapPin size={18} className="text-blue-500 shrink-0 mt-1" />
@@ -156,7 +156,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center py-8 gap-4">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Silver Life Gym Trial. All rights reserved. Made with 💪 in Ahmedabad
+            © {new Date().getFullYear()} ABC.gym Gym Trial. All rights reserved. Made with 💪 in Ahmedabad
           </p>
 
           {/* Social Links */}

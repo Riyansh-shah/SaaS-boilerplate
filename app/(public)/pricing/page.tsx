@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Check, X, Zap, Crown, Star, ArrowRight, Phone } from "lucide-react";
 
 export const metadata = {
-  title: "Memberships | Silver Life Gym Trial",
+  title: "Memberships | ABC.gym Gym Trial",
   description: "Choose the perfect gym membership for your fitness goals. From basic access to premium personal training packages.",
 };
 

@@ -8,7 +8,7 @@ const testimonials = [
         role: "Lost 20kg in 8 months",
         image: null,
         rating: 5,
-        text: "Silver Life completely transformed my life. The trainers understood my goals and created a program that worked. The results speak for themselves!",
+        text: "ABC.gym completely transformed my life. The trainers understood my goals and created a program that worked. The results speak for themselves!",
         highlight: "20kg Lost",
     },
     {

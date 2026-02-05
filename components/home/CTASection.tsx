@@ -27,7 +27,7 @@ export default function CTASection() {
 
                     <p className="text-slate-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
                         Take the first step today. Get a free 7-day trial and experience
-                        everything Silver Life has to offer—no commitment required.
+                        everything ABC.gym has to offer—no commitment required.
                     </p>
 
                     {/* CTA Buttons */}
