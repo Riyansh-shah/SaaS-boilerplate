@@ -1,43 +1,27 @@
 import "dotenv/config";
 import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient({});
 
 async function main() {
-  // 1️⃣ Create admin user
+  // Hash password for admin
+  const hashedPassword = await bcrypt.hash("admin123", 10);
+
+  // Create admin user for Silver Life Gym
   const admin = await prisma.user.upsert({
-    where: { email: "admin@cctrial.com" },
+    where: { email: "admin@silverlifegym.com" },
     update: {},
     create: {
-      email: "admin@cctrial.com",
-      name: "CC Admin",
+      email: "admin@silverlifegym.com",
+      name: "Silver Life Admin",
+      password: hashedPassword,
       role: "ADMIN",
     },
   });
 
-  // 2️⃣ Create Categories
-  const categories = [
-    { name: "New Born", slug: "new-born", description: "Gifts for the littlest ones" },
-    { name: "Toddlers", slug: "toddlers", description: "Safe and fun toys for toddlers" },
-    { name: "Kids", slug: "kids", description: "Personalized gifts for children" },
-    { name: "Teenager", slug: "teenager", description: "Cool and unique gifts for teens" },
-    { name: "School & Stationery", slug: "school-stationery", description: "Custom school supplies" },
-    { name: "Furniture", slug: "furniture", description: "Custom kids furniture" },
-    { name: "Room Décor", slug: "room-decor", description: "Personalized room decorations" },
-    { name: "DIY Kits", slug: "diy", description: "Creative do-it-yourself art kits" },
-  ];
-
-  for (const cat of categories) {
-    await prisma.category.upsert({
-      where: { slug: cat.slug },
-      update: {},
-      create: cat,
-    });
-  }
-
   console.log("✅ Seed completed");
   console.log("Admin user:", admin.email);
-  console.log("Categories created:", categories.length);
 }
 
 main()

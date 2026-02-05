@@ -11,9 +11,11 @@ const pillars = [
         subtitle: "Gym & Strength",
         description: "World-class equipment and physio-led training programs designed to build strength, endurance, and functional fitness.",
         features: ["Strength Building", "Cardio Training", "Functional Fitness", "Posture Correction"],
-        color: "blue",
         gradient: "from-blue-500 to-blue-600",
         bgGlow: "bg-blue-500/10",
+        subtitleClass: "text-blue-500",
+        dotClass: "bg-blue-500",
+        linkClass: "text-blue-600 hover:text-blue-700",
         href: "/classes?category=strength",
     },
     {
@@ -23,9 +25,11 @@ const pillars = [
         subtitle: "Body Programs",
         description: "Specialized programs for weight management, body contouring, and complete physical transformation with expert guidance.",
         features: ["Weight Loss", "Body Sculpting", "HIIT Training", "Nutrition Plans"],
-        color: "cyan",
         gradient: "from-cyan-500 to-cyan-600",
         bgGlow: "bg-cyan-500/10",
+        subtitleClass: "text-cyan-500",
+        dotClass: "bg-cyan-500",
+        linkClass: "text-cyan-600 hover:text-cyan-700",
         href: "/classes?category=hiit",
     },
     {
@@ -35,12 +39,15 @@ const pillars = [
         subtitle: "Wellness & Recovery",
         description: "Holistic wellness programs including yoga, stretching, and recovery sessions for mind-body balance and long-term health.",
         features: ["Yoga Classes", "Flexibility Training", "Recovery Sessions", "Stress Relief"],
-        color: "emerald",
         gradient: "from-emerald-500 to-emerald-600",
         bgGlow: "bg-emerald-500/10",
+        subtitleClass: "text-emerald-500",
+        dotClass: "bg-emerald-500",
+        linkClass: "text-emerald-600 hover:text-emerald-700",
         href: "/classes?category=yoga",
     },
 ];
+
 
 export default function PhilosophySection() {
     return (
@@ -81,7 +88,7 @@ export default function PhilosophySection() {
                             {/* Title */}
                             <div className="mb-4">
                                 <h3 className="text-2xl font-bold text-slate-900 mb-1">{pillar.title}</h3>
-                                <p className={`text-sm font-semibold text-${pillar.color}-500`}>{pillar.subtitle}</p>
+                                <p className={`text-sm font-semibold ${pillar.subtitleClass}`}>{pillar.subtitle}</p>
                             </div>
 
                             {/* Description */}
@@ -93,7 +100,7 @@ export default function PhilosophySection() {
                             <ul className="space-y-2 mb-8">
                                 {pillar.features.map((feature, i) => (
                                     <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                                        <div className={`w-1.5 h-1.5 rounded-full bg-${pillar.color}-500`} />
+                                        <div className={`w-1.5 h-1.5 rounded-full ${pillar.dotClass}`} />
                                         {feature}
                                     </li>
                                 ))}
@@ -102,7 +109,7 @@ export default function PhilosophySection() {
                             {/* CTA */}
                             <Link
                                 href={pillar.href}
-                                className={`inline-flex items-center gap-2 text-sm font-semibold text-${pillar.color}-600 hover:text-${pillar.color}-700 transition-colors group/link`}
+                                className={`inline-flex items-center gap-2 text-sm font-semibold ${pillar.linkClass} transition-colors group/link`}
                             >
                                 Explore Programs
                                 <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />

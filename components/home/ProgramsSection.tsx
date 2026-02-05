@@ -10,7 +10,7 @@ const programs = [
         description: "Build lean muscle and increase power with our comprehensive strength training programs.",
         duration: "45-60 min",
         level: "All Levels",
-        color: "blue",
+        iconClass: "bg-blue-500/10 text-blue-500",
         features: ["Free Weights", "Machine Training", "Core Strength", "Muscle Building"],
         href: "/classes?category=strength",
     },
@@ -20,7 +20,7 @@ const programs = [
         description: "Boost your cardiovascular health with high-energy sessions designed for maximum fat burn.",
         duration: "30-45 min",
         level: "All Levels",
-        color: "cyan",
+        iconClass: "bg-cyan-500/10 text-cyan-500",
         features: ["Treadmill", "Cycling", "Rowing", "Stair Climber"],
         href: "/classes?category=cardio",
     },
@@ -30,7 +30,7 @@ const programs = [
         description: "Improve flexibility, balance, and mental clarity through mindful movement practices.",
         duration: "60 min",
         level: "All Levels",
-        color: "emerald",
+        iconClass: "bg-emerald-500/10 text-emerald-500",
         features: ["Vinyasa Flow", "Power Yoga", "Mat Pilates", "Stretching"],
         href: "/classes?category=yoga",
     },
@@ -40,7 +40,7 @@ const programs = [
         description: "High-intensity intervals that maximize calorie burn and boost metabolism.",
         duration: "30-45 min",
         level: "Intermediate+",
-        color: "orange",
+        iconClass: "bg-orange-500/10 text-orange-500",
         features: ["Circuit Training", "Tabata", "Metabolic Conditioning", "Afterburn Effect"],
         href: "/classes?category=hiit",
     },
@@ -50,7 +50,7 @@ const programs = [
         description: "Functional fitness combining strength, cardio, and gymnastics for total-body conditioning.",
         duration: "60 min",
         level: "Intermediate+",
-        color: "amber",
+        iconClass: "bg-amber-500/10 text-amber-500",
         features: ["Olympic Lifts", "WODs", "Functional Movements", "Competition Ready"],
         href: "/classes?category=crossfit",
     },
@@ -60,11 +60,12 @@ const programs = [
         description: "One-on-one sessions with certified trainers for personalized attention and faster results.",
         duration: "60 min",
         level: "Custom",
-        color: "violet",
+        iconClass: "bg-violet-500/10 text-violet-500",
         features: ["Custom Programs", "Form Correction", "Goal Setting", "Progress Tracking"],
         href: "/classes?category=personal",
     },
 ];
+
 
 export default function ProgramsSection() {
     return (
@@ -93,7 +94,7 @@ export default function ProgramsSection() {
                         >
                             {/* Header */}
                             <div className="flex items-start justify-between mb-4">
-                                <div className={`w-14 h-14 rounded-2xl bg-${program.color}-500/10 flex items-center justify-center text-${program.color}-500 group-hover:scale-110 transition-transform`}>
+                                <div className={`w-14 h-14 rounded-2xl ${program.iconClass} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                                     <program.icon size={28} />
                                 </div>
                                 <div className="flex items-center gap-2 text-xs text-slate-500">
