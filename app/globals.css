@@ -2,18 +2,18 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors - Vibrant & Modern */
-  --color-primary: #6366f1;
-  --color-primary-dark: #4f46e5;
-  --color-primary-light: #818cf8;
-  --color-secondary: #f97316;
-  --color-secondary-dark: #ea580c;
-  --color-secondary-light: #fb923c;
-  --color-accent: #14b8a6;
-  --color-accent-dark: #0d9488;
-  --color-accent-light: #2dd4bf;
+  /* Brand Colors - Silver Life Theme (Blue & Silver) */
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-primary-light: #60a5fa;
+  --color-secondary: #94a3b8;
+  --color-secondary-dark: #64748b;
+  --color-secondary-light: #cbd5e1;
+  --color-accent: #06b6d4;
+  --color-accent-dark: #0891b2;
+  --color-accent-light: #22d3ee;
 
-  /* Neutrals */
+  /* Neutrals - Silver Theme */
   --color-dark: #0f172a;
   --color-dark-light: #1e293b;
   --color-gray: #64748b;
@@ -21,9 +21,9 @@
   --color-light: #f1f5f9;
   --color-white: #ffffff;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
-  --gradient-secondary: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+  /* Gradients - Silver Blue */
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #93c5fd 100%);
+  --gradient-secondary: linear-gradient(135deg, #64748b 0%, #94a3b8 100%);
   --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 
@@ -32,7 +32,7 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.3);
 
   /* Typography */
   --font-heading: 'Outfit', sans-serif;

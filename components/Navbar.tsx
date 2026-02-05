@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
 import {
@@ -12,42 +11,40 @@ import {
   Home,
   Info,
   Mail,
-  ShoppingBag,
+  Dumbbell,
   User,
-  ShoppingCart,
-  Package,
+  Calendar,
   CreditCard,
-  Settings,
   LogOut,
   LogIn,
+  Clock,
 } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home", icon: Home },
   { href: "/about", label: "About Us", icon: Info },
   {
-    href: "/products",
-    label: "Products",
-    icon: ShoppingBag,
+    href: "/classes",
+    label: "Classes",
+    icon: Dumbbell,
     submenu: [
-      { href: "/products?category=new-born", label: "New Born" },
-      { href: "/products?category=toddlers", label: "Toddlers" },
-      { href: "/products?category=kids", label: "Kids" },
-      { href: "/products?category=teenager", label: "Teenager" },
-      { href: "/products?category=school-stationery", label: "School & Stationery" },
-      { href: "/products?category=furniture", label: "Furniture" },
-      { href: "/products?category=room-decor", label: "Room Décor" },
-      { href: "/products?category=diy", label: "DIY Kits" },
+      { href: "/classes?category=strength", label: "Strength Training" },
+      { href: "/classes?category=cardio", label: "Cardio" },
+      { href: "/classes?category=yoga", label: "Yoga & Pilates" },
+      { href: "/classes?category=hiit", label: "HIIT" },
+      { href: "/classes?category=crossfit", label: "CrossFit" },
+      { href: "/classes?category=personal", label: "Personal Training" },
     ],
   },
+  { href: "/pricing", label: "Memberships", icon: CreditCard },
+  { href: "/schedule", label: "Schedule", icon: Clock },
   { href: "/contact", label: "Contact", icon: Mail },
 ];
 
 const accountLinks = [
-  { href: "/settings", label: "Personal Details", icon: User },
-  { href: "/cart", label: "Shopping Cart", icon: ShoppingCart },
-  { href: "/orders", label: "Past Orders", icon: Package },
-  { href: "/checkout", label: "Checkout", icon: CreditCard },
+  { href: "/settings", label: "My Profile", icon: User },
+  { href: "/bookings", label: "My Bookings", icon: Calendar },
+  { href: "/schedule", label: "Class Schedule", icon: Clock },
 ];
 
 export default function Navbar() {
@@ -79,15 +76,13 @@ export default function Navbar() {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <Image
-              src="/logo.png"
-              alt="CuteCraft Logo"
-              width={140}
-              height={50}
-              className="h-10 md:h-12 w-auto transition-transform group-hover:scale-105"
-              priority
-            />
+          <Link href="/" className="flex items-center group gap-2">
+            <div className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${isScrolled ? "from-blue-500 to-cyan-500" : "from-white to-slate-100"}`}>
+              <Dumbbell size={24} className={isScrolled ? "text-white" : "text-blue-600"} />
+            </div>
+            <span className={`text-xl font-bold font-heading ${isScrolled ? "text-slate-900" : "text-white"}`}>
+              Silver Life
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -101,7 +96,7 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className={`flex items-center gap-1.5 font-semibold text-sm transition-colors ${isScrolled ? "text-slate-600 hover:text-primary" : "text-white/90 hover:text-white"
+                  className={`flex items-center gap-1.5 font-semibold text-sm transition-colors ${isScrolled ? "text-slate-600 hover:text-blue-600" : "text-white/90 hover:text-white"
                     }`}
                 >
                   {link.label}
@@ -118,7 +113,7 @@ export default function Navbar() {
                       <Link
                         key={sublink.href}
                         href={sublink.href}
-                        className="block px-6 py-2 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 transition-all font-medium"
+                        className="block px-6 py-2 text-sm text-slate-600 hover:text-blue-600 hover:bg-slate-50 transition-all font-medium"
                       >
                         {sublink.label}
                       </Link>
@@ -136,7 +131,7 @@ export default function Navbar() {
               className={`flex items-center gap-2 font-bold text-sm transition-colors ${isScrolled ? "text-slate-900" : "text-white"
                 }`}
             >
-              <Phone size={18} className="text-primary" />
+              <Phone size={18} className="text-blue-500" />
               <span className="hidden xl:inline">+91 1234567890</span>
             </a>
 
@@ -153,8 +148,7 @@ export default function Navbar() {
                     : "bg-white/10 text-white hover:bg-white/20"
                     }`}
                 >
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${isScrolled ? "bg-primary text-white" : "bg-white text-primary"
-                    }`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold bg-gradient-to-br from-blue-500 to-cyan-500 text-white`}>
                     {userInitial}
                   </div>
                   <span className="hidden xl:inline">Account</span>
@@ -174,7 +168,7 @@ export default function Navbar() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 transition-all font-medium"
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-600 hover:text-blue-600 hover:bg-slate-50 transition-all font-medium"
                     >
                       <item.icon size={18} />
                       {item.label}
@@ -206,9 +200,9 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/signup"
-                  className="btn btn-primary px-5 py-2.5 text-sm font-bold shadow-lg shadow-indigo-500/20"
+                  className="btn btn-primary px-5 py-2.5 text-sm font-bold shadow-lg shadow-blue-500/20"
                 >
-                  Sign Up
+                  Join Now
                 </Link>
               </div>
             )}
@@ -238,13 +232,12 @@ export default function Navbar() {
           }`}
       >
         <div className="p-6 flex items-center justify-between border-b border-slate-100">
-          <Image
-            src="/logo.png"
-            alt="CuteCraft Logo"
-            width={100}
-            height={36}
-            className="h-8 w-auto"
-          />
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+              <Dumbbell size={18} className="text-white" />
+            </div>
+            <span className="text-lg font-bold font-heading text-slate-900">Silver Life</span>
+          </div>
           <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-slate-500 hover:bg-slate-50 rounded-lg">
             <X size={24} />
           </button>
@@ -259,7 +252,7 @@ export default function Navbar() {
                   onClick={() => !link.submenu && setIsMobileMenuOpen(false)}
                   className="flex items-center gap-3 p-3 text-lg font-bold text-slate-900 hover:bg-slate-50 rounded-xl transition-colors"
                 >
-                  <link.icon size={22} className="text-primary" />
+                  <link.icon size={22} className="text-blue-600" />
                   {link.label}
                 </Link>
                 {link.submenu && (
@@ -269,7 +262,7 @@ export default function Navbar() {
                         key={sublink.href}
                         href={sublink.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="p-2 text-slate-500 font-medium hover:text-primary transition-colors"
+                        className="p-2 text-slate-500 font-medium hover:text-blue-600 transition-colors"
                       >
                         {sublink.label}
                       </Link>
@@ -290,7 +283,7 @@ export default function Navbar() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="flex items-center gap-3 p-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-xl transition-colors"
                   >
-                    <item.icon size={20} className="text-primary" />
+                    <item.icon size={20} className="text-blue-600" />
                     {item.label}
                   </Link>
                 ))}
@@ -304,7 +297,7 @@ export default function Navbar() {
             href="tel:+911234567890"
             className="flex items-center justify-center gap-3 w-full p-4 bg-white border border-slate-200 rounded-2xl text-slate-900 font-bold mb-3 shadow-sm"
           >
-            <Phone size={20} className="text-primary" />
+            <Phone size={20} className="text-blue-600" />
             +91 1234567890
           </a>
 
@@ -331,10 +324,10 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/signup"
-                className="btn btn-primary w-full p-4 rounded-2xl font-bold shadow-lg shadow-indigo-500/10"
+                className="btn btn-primary w-full p-4 rounded-2xl font-bold shadow-lg shadow-blue-500/10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Sign Up
+                Join Now
               </Link>
             </div>
           )}
@@ -343,4 +336,3 @@ export default function Navbar() {
     </>
   );
 }
-

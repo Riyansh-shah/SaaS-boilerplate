@@ -1,87 +1,85 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Play, Sparkles } from "lucide-react";
+import { ArrowRight, Play, Dumbbell, Users, Calendar, Award } from "lucide-react";
+
+const stats = [
+    { value: "2500+", label: "Active Members", icon: Users },
+    { value: "50+", label: "Weekly Classes", icon: Calendar },
+    { value: "15+", label: "Expert Trainers", icon: Award },
+    { value: "6+", label: "Years Experience", icon: Dumbbell },
+];
 
 export default function HeroSection() {
     return (
-        <section className="relative min-h-[100vh] flex items-center bg-[#0f172a] overflow-hidden pt-20">
-            {/* Subtle Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e1b4b]/50 to-[#0f172a]" />
+        <section className="relative min-h-[100vh] flex flex-col bg-slate-900 overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+            <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[150px]" />
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px]" />
 
-            {/* Single Decorative Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-[120px]" />
+            {/* Main Hero Content */}
+            <div className="flex-1 flex items-center relative z-10 pt-24">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-4xl mx-auto text-center">
+                        {/* Tagline Banner */}
+                        <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 mb-8">
+                            <span className="text-blue-400 font-bold">Train</span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
+                            <span className="text-cyan-400 font-bold">Transform</span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
+                            <span className="text-emerald-400 font-bold">Thrive</span>
+                        </div>
 
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Hero Content */}
-                    <div className="animate-fade-in-up flex flex-col items-center lg:items-start text-center lg:text-left">
-                        <span className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 px-4 py-2 rounded-full text-sm font-medium mb-8">
-                            <Sparkles size={14} />
-                            Customized Gifts for Every Occasion
-                        </span>
-
+                        {/* Main Headline */}
                         <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] tracking-tight">
-                            Crafting <span className="gradient-text">Memories</span> That Last a Lifetime
+                            Your Journey to{" "}
+                            <span className="gradient-text">Peak Fitness</span>{" "}
+                            Starts Here
                         </h1>
 
-                        <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-lg leading-relaxed">
-                            Discover unique personalized gifts for your loved ones. From
-                            custom furniture to room décor, DIY kits to birthday surprises.
+                        {/* Subheadline */}
+                        <p className="text-slate-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                            Experience Ahmedabad's premier fitness destination. State-of-the-art equipment,
+                            expert trainers, and personalized programs designed for your success.
                         </p>
 
-                        <div className="flex flex-wrap gap-4">
-                            <Link href="/products" className="btn btn-primary text-base px-7 py-3.5">
-                                Explore Products
+                        {/* CTA Buttons */}
+                        <div className="flex flex-wrap justify-center gap-4 mb-12">
+                            <Link
+                                href="/signup"
+                                className="btn btn-primary text-base px-8 py-4 shadow-lg shadow-blue-500/25"
+                            >
+                                Start Free Trial
                                 <ArrowRight size={18} />
                             </Link>
-                            <Link href="/contact" className="btn border border-white/20 hover:border-white/40 text-white text-base px-7 py-3.5 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all">
+                            <Link
+                                href="/about"
+                                className="btn bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 text-base px-8 py-4"
+                            >
                                 <Play size={16} className="fill-white" />
-                                Get a Quote
+                                Watch Our Story
                             </Link>
                         </div>
-
-                        {/* Trust Indicators - Cleaner */}
-                        <div className="mt-14 flex flex-wrap gap-12 justify-center lg:justify-start">
-                            <div className="text-center lg:text-left">
-                                <div className="text-white text-3xl md:text-4xl font-bold font-heading">5000+</div>
-                                <div className="text-gray-500 text-sm mt-1">Happy Customers</div>
-                            </div>
-                            <div className="text-center lg:text-left">
-                                <div className="text-white text-3xl md:text-4xl font-bold font-heading">100+</div>
-                                <div className="text-gray-500 text-sm mt-1">Unique Products</div>
-                            </div>
-                            <div className="text-center lg:text-left">
-                                <div className="text-white text-3xl md:text-4xl font-bold font-heading">5+</div>
-                                <div className="text-gray-500 text-sm mt-1">Years Experience</div>
-                            </div>
-                        </div>
                     </div>
+                </div>
+            </div>
 
-                    {/* Hero Visual - Product Image */}
-                    <div className="relative flex justify-center items-center order-first lg:order-last mb-8 lg:mb-0">
-                        <div className="w-full max-w-[450px] relative group">
-                            <Image
-                                src="/hero-product.png"
-                                alt="Customized Kids Trolley Rack"
-                                width={450}
-                                height={450}
-                                className="w-full h-auto rounded-3xl transition-transform duration-500 group-hover:scale-105 drop-shadow-2xl"
-                                priority
-                            />
-                        </div>
-
-                        {/* Floating Card - Simplified */}
-                        <div className="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm px-5 py-4 rounded-2xl shadow-xl flex items-center gap-3 animate-slide-in-left hidden md:flex">
-                            <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center text-xl">
-                                🎉
+            {/* Stats Bar at Bottom */}
+            <div className="relative z-10 bg-white/5 backdrop-blur-md border-t border-white/10">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8">
+                        {stats.map((stat, index) => (
+                            <div key={index} className="flex items-center justify-center gap-4 group">
+                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                                    <stat.icon size={24} />
+                                </div>
+                                <div className="text-left">
+                                    <div className="text-white text-2xl md:text-3xl font-bold">{stat.value}</div>
+                                    <div className="text-slate-500 text-sm">{stat.label}</div>
+                                </div>
                             </div>
-                            <div>
-                                <div className="font-semibold text-slate-900 text-sm">Free Customization</div>
-                                <div className="text-xs text-slate-500">On all products</div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>

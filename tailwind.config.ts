@@ -9,19 +9,19 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#6366f1",
-          dark: "#4f46e5",
-          light: "#818cf8",
+          DEFAULT: "#3b82f6",
+          dark: "#2563eb",
+          light: "#60a5fa",
         },
         secondary: {
-          DEFAULT: "#f97316",
-          dark: "#ea580c",
-          light: "#fb923c",
+          DEFAULT: "#94a3b8",
+          dark: "#64748b",
+          light: "#cbd5e1",
         },
         accent: {
-          DEFAULT: "#14b8a6",
-          dark: "#0d9488",
-          light: "#2dd4bf",
+          DEFAULT: "#06b6d4",
+          dark: "#0891b2",
+          light: "#22d3ee",
         },
         dark: {
           DEFAULT: "#0f172a",
@@ -68,7 +68,7 @@ const config: Config = {
         },
       },
       boxShadow: {
-        glow: "0 0 40px rgba(99, 102, 241, 0.3)",
+        glow: "0 0 40px rgba(59, 130, 246, 0.3)",
       },
     },
   },

@@ -1,9 +1,9 @@
 import Section from "@/components/ui/Section";
-import { Award, Target, Eye, Users, Heart, Sparkles } from "lucide-react";
+import { Award, Target, Eye, Users, Heart, Sparkles, Dumbbell, Clock, Shield } from "lucide-react";
 
 export const metadata = {
-    title: "About Us | CC-Trial",
-    description: "Learn more about CC-Trial, our story, mission, and how we craft customized gifts in Ahmedabad.",
+    title: "About Us | Silver Life Gym Trial",
+    description: "Learn more about Silver Life Gym, our story, mission, and commitment to transforming lives through fitness in Ahmedabad.",
 };
 
 export default function AboutPage() {
@@ -14,9 +14,9 @@ export default function AboutPage() {
                 <div className="text-center max-w-3xl mx-auto">
                     <h1 className="text-white mb-6">Our Story</h1>
                     <p className="text-white/80 text-xl">
-                        Crafting smiles and memories through personalized gifts since 2020.
-                        Based in the heart of Ahmedabad, we believe every gift should be as
-                        unique as the person receiving it.
+                        Transforming lives through fitness since 2018. Based in the heart
+                        of Ahmedabad, Silver Life Gym is more than just a workout space –
+                        it's a community dedicated to helping you become your best self.
                     </p>
                 </div>
             </Section>
@@ -30,49 +30,50 @@ export default function AboutPage() {
                         </div>
                         <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                         <p className="text-gray-600 leading-relaxed">
-                            To revolutionize the gifting experience by providing high-quality,
-                            customizable products that help people express their love and
-                            creativity. We strive to make every occasion special with a touch
-                            of personalization.
+                            To empower individuals to achieve their fitness goals through
+                            exceptional facilities, expert guidance, and a supportive community.
+                            We believe everyone deserves access to world-class fitness resources
+                            to transform their body and mind.
                         </p>
                     </div>
                     <div className="bg-white p-12 rounded-3xl shadow-md border border-gray-100">
-                        <div className="text-secondary mb-6">
+                        <div className="text-cyan-500 mb-6">
                             <Eye size={48} />
                         </div>
                         <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
                         <p className="text-gray-600 leading-relaxed">
-                            To become India's leading destination for personalized gifts,
-                            known for our innovation, craftsmanship, and commitment to
-                            customer satisfaction. We aim to inspire creativity in every home.
+                            To become Gujarat's most trusted fitness destination, known for
+                            our innovative training programs, cutting-edge equipment, and
+                            genuine care for every member's success. We aim to inspire a
+                            healthier, stronger community.
                         </p>
                     </div>
                 </div>
             </Section>
 
-            {/* Stats/Experience */}
+            {/* Stats/Experience - Gym Metrics */}
             <Section>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                     <div>
-                        <h2 className="gradient-text text-6xl font-extrabold mb-2">5+</h2>
+                        <h2 className="gradient-text text-6xl font-extrabold mb-2">6+</h2>
                         <p className="text-gray-600 font-medium">Years of Experience</p>
                     </div>
                     <div>
-                        <h2 className="gradient-text text-6xl font-extrabold mb-2">10k+</h2>
-                        <p className="text-gray-600 font-medium">Gifts Delivered</p>
+                        <h2 className="gradient-text text-6xl font-extrabold mb-2">2500+</h2>
+                        <p className="text-gray-600 font-medium">Active Members</p>
                     </div>
                     <div>
-                        <h2 className="gradient-text text-6xl font-extrabold mb-2">100+</h2>
-                        <p className="text-gray-600 font-medium">Product Categories</p>
+                        <h2 className="gradient-text text-6xl font-extrabold mb-2">50+</h2>
+                        <p className="text-gray-600 font-medium">Weekly Classes</p>
                     </div>
                     <div>
-                        <h2 className="gradient-text text-6xl font-extrabold mb-2">99%</h2>
-                        <p className="text-gray-600 font-medium">Happy Customers</p>
+                        <h2 className="gradient-text text-6xl font-extrabold mb-2">15+</h2>
+                        <p className="text-gray-600 font-medium">Expert Trainers</p>
                     </div>
                 </div>
             </Section>
 
-            {/* Core Values */}
+            {/* Core Values - Gym Themed */}
             <Section variant="light">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold">Our Core <span className="gradient-text">Values</span></h2>
@@ -80,12 +81,12 @@ export default function AboutPage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
-                        { icon: Heart, title: "Passion", desc: "We are passionate about creativity and crafting the perfect gifts." },
-                        { icon: Sparkles, title: "Quality", desc: "We never compromise on the quality of materials or craftsmanship." },
-                        { icon: Users, title: "Customer First", desc: "Your satisfaction is our priority. We listen and evolve with you." },
-                        { icon: Award, title: "Innovation", desc: "We constantly explore new designs and personalization techniques." },
-                        { icon: Heart, title: "Integrity", desc: "We believe in honest pricing and transparent business practices." },
-                        { icon: Sparkles, title: "Craftsmanship", desc: "Every product is finished with meticulous attention to detail." },
+                        { icon: Dumbbell, title: "Excellence", desc: "We maintain the highest standards in equipment, cleanliness, and training quality." },
+                        { icon: Users, title: "Community", desc: "We foster a supportive environment where everyone feels welcome and motivated." },
+                        { icon: Heart, title: "Passion", desc: "We are passionate about fitness and genuinely care about your success." },
+                        { icon: Shield, title: "Safety", desc: "Your safety is our priority with proper equipment maintenance and guidance." },
+                        { icon: Clock, title: "Consistency", desc: "We believe in sustainable fitness habits that lead to lasting results." },
+                        { icon: Sparkles, title: "Innovation", desc: "We constantly evolve our programs with the latest fitness science and trends." },
                     ].map((value, i) => (
                         <div key={i} className="text-center p-8 bg-white/50 rounded-2xl hover:bg-white transition-colors shadow-sm border border-gray-100/50">
                             <div className="text-primary mb-4 flex justify-center">

@@ -1,52 +1,57 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, Phone, Sparkles } from "lucide-react";
 
 export default function CTASection() {
     return (
-        <section className="relative py-20 md:py-28 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 overflow-hidden">
-            {/* Subtle Background Glow */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
+        <section className="py-24 bg-slate-900 relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[150px]" />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px]" />
 
-            <div className="container mx-auto px-4 relative text-center">
-                <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-5 max-w-2xl mx-auto leading-tight">
-                    Ready to Create Something Special?
-                </h2>
-                <p className="text-white/70 text-base md:text-lg max-w-xl mx-auto mb-10">
-                    Get in touch with us today and let's craft the perfect personalized gift for your loved ones!
-                </p>
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="max-w-4xl mx-auto text-center">
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full text-white text-sm font-medium mb-8">
+                        <Sparkles size={16} className="text-amber-400" />
+                        Limited Time: No Joining Fee
+                    </div>
 
-                <div className="flex flex-wrap justify-center gap-3">
-                    <Link href="/contact" className="btn bg-white text-indigo-600 hover:bg-slate-50 px-7 py-3.5 font-semibold">
-                        Get Free Quote
-                        <ArrowRight size={18} />
-                    </Link>
-                    <a
-                        href="https://wa.me/911234567890"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn bg-[#25D366] hover:bg-[#22c35e] text-white px-7 py-3.5 font-semibold"
-                    >
-                        <MessageCircle size={18} />
-                        WhatsApp
-                    </a>
-                </div>
+                    {/* Headline */}
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                        Ready to Start Your
+                        <br />
+                        <span className="gradient-text">Transformation?</span>
+                    </h2>
 
-                {/* Trust Badges - Subtle */}
-                <div className="mt-12 flex flex-wrap justify-center gap-6 md:gap-10 text-sm">
-                    <span className="text-white/60 flex items-center gap-2">
-                        <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs">✓</span>
-                        Free Consultation
-                    </span>
-                    <span className="text-white/60 flex items-center gap-2">
-                        <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs">✓</span>
-                        No Hidden Charges
-                    </span>
-                    <span className="text-white/60 flex items-center gap-2">
-                        <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs">✓</span>
-                        Quick Delivery
-                    </span>
+                    <p className="text-slate-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                        Take the first step today. Get a free 7-day trial and experience
+                        everything Silver Life has to offer—no commitment required.
+                    </p>
+
+                    {/* CTA Buttons */}
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <Link
+                            href="/signup"
+                            className="btn btn-primary px-10 py-5 text-lg font-bold shadow-xl shadow-blue-500/25"
+                        >
+                            Start Free Trial
+                            <ArrowRight size={20} />
+                        </Link>
+                        <a
+                            href="tel:+911234567890"
+                            className="btn bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 px-10 py-5 text-lg font-bold"
+                        >
+                            <Phone size={20} />
+                            Call Us Now
+                        </a>
+                    </div>
+
+                    {/* Trust Indicators */}
+                    <p className="text-slate-500 text-sm mt-8">
+                        Join 2,500+ members already training with us
+                    </p>
                 </div>
             </div>
         </section>

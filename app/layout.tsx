@@ -4,49 +4,50 @@ import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: {
-    default: "CC-Trial | Customized Gift Ideas | Ahmedabad",
-    template: "%s | CC-Trial",
+    default: "Silver Life Gym Trial | Transform Your Body, Transform Your Life",
+    template: "%s | Silver Life Gym Trial",
   },
   description:
-    "Discover unique customized gifts for kids and loved ones. Shop furniture, room décor, DIY kits, school supplies, and more. Based in Ahmedabad, Gujarat.",
+    "Your premier fitness destination. Join our state-of-the-art gym with expert trainers, diverse classes, and flexible memberships. Start your transformation today!",
   keywords: [
-    "customized gifts",
-    "personalized gifts",
-    "kids gifts",
-    "Ahmedabad gifts",
-    "DIY kits",
-    "room décor",
-    "furniture for kids",
-    "school stationery",
-    "birthday gifts",
-    "Gujarat",
+    "gym",
+    "fitness center",
+    "workout",
+    "personal training",
+    "gym membership",
+    "strength training",
+    "cardio",
+    "yoga classes",
+    "HIIT",
+    "CrossFit",
+    "fitness classes",
   ],
-  authors: [{ name: "CC-Trial" }],
-  creator: "CC-Trial",
-  publisher: "CC-Trial",
+  authors: [{ name: "Silver Life Gym Trial" }],
+  creator: "Silver Life Gym Trial",
+  publisher: "Silver Life Gym Trial",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://cc-trial.com"),
+  metadataBase: new URL("https://silverlifegym.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "CC-Trial | Customized Gift Ideas",
+    title: "Silver Life Gym Trial | Transform Your Body, Transform Your Life",
     description:
-      "Discover unique customized gifts for kids and loved ones. Shop furniture, room décor, DIY kits, and more.",
-    url: "https://cc-trial.com",
-    siteName: "CC-Trial",
+      "Your premier fitness destination with state-of-the-art equipment, expert trainers, and diverse fitness classes.",
+    url: "https://silverlifegym.com",
+    siteName: "Silver Life Gym Trial",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CC-Trial | Customized Gift Ideas",
+    title: "Silver Life Gym Trial | Transform Your Body, Transform Your Life",
     description:
-      "Discover unique customized gifts for kids and loved ones. Shop furniture, room décor, DIY kits, and more.",
+      "Your premier fitness destination with state-of-the-art equipment, expert trainers, and diverse fitness classes.",
   },
   robots: {
     index: true,
@@ -87,13 +88,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "CC-Trial",
+              "@type": "HealthClub",
+              name: "Silver Life Gym Trial",
               description:
-                "Customized gift ideas for kids and loved ones in Ahmedabad",
-              url: "https://cc-trial.com",
+                "Premier fitness destination with state-of-the-art equipment, expert trainers, and diverse fitness classes",
+              url: "https://silverlifegym.com",
               telephone: "+91-1234567890",
-              email: "abc@email.com",
+              email: "info@silverlifegym.com",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Ahmedabad",
@@ -105,7 +106,7 @@ export default function RootLayout({
                 latitude: "23.0225",
                 longitude: "72.5714",
               },
-              openingHours: "Mo-Sa 10:00-19:00",
+              openingHours: "Mo-Su 05:00-23:00",
               priceRange: "₹₹",
             }),
           }}
